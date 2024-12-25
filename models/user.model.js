@@ -35,10 +35,8 @@ userSchema.methods.generateAuthToken = function () {
     {
       _id: this._id,
     },
-    {
-      expiresIn: '24h'
-    },
-    process.env.JWT_SECRET
+     process.env.JWT_SECRET,
+     { expiresIn: "24h" }
   );
   return token;
 };
